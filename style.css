@@ -1,0 +1,301 @@
+@import url('https://fonts.googleapis.com/css2?family=Mali:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Island+Moments&display=swap');
+
+:root {
+  /* -- color -- */
+  --c1: #3b3f43;
+  --c2: #E74C3C;
+  --c3: #ECF0F1;
+  --c4: #197EDE;
+  --c5: #091d2a;
+
+  /* -- font -- */
+  --fMali: 'Mali', cursive;
+  --fIsland: 'Island Moments', cursive;
+
+  /* -- header -- */
+  --cHeader: #197EDE;
+  --cHeaderHover: #E74C3C;
+
+  /* -- loading -- */
+  --cLoading: #197EDE;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+
+  list-style-type: none;
+  text-decoration: none;
+}
+
+body {
+  width: 100%;
+  height: 1000px;
+
+  font-family: var(--fMali);
+}
+
+body a {
+  color: var(--cBlueTone);
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+.load {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background-color: white;
+  z-index: 1000;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.load.TL {
+  animation: animate3 1s ;
+}
+
+@keyframes animate3 {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity:0;
+  }
+}
+
+.load.TL .box .c1 {
+  animation: animate2 1s ;
+}
+
+@keyframes animate2 {
+  0% {
+    width: 80px;
+    height: 80px;
+  }
+  100% {
+    width: 500px;
+    height: 500px;
+  }
+}
+
+.load .box {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  /* border: 1px solid blue; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.load .box .c4 {
+  width: 250px;
+  height: 250px;
+  background-color: var(--cLoading);
+  border-radius: 15%;
+  transform: rotate(30deg);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  animation: animate 7s infinite;
+}
+
+.load .box .c3 {
+  width: 180px;
+  height: 180px;
+  background-color: white;
+  border-radius: 5%;
+  transform: rotate(30deg);
+  border-radius: 15%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  animation: animate 7s infinite;
+}
+
+.load .box .c2 {
+  width: 130px;
+  height: 130px;
+  background-color: var(--cLoading);
+  transform: rotate(30deg);
+  border-radius: 15%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  animation: animate 7s infinite;
+}
+
+.load .box .c1 {
+  position: relative;
+  width: 80px;
+  height: 80px;
+  background-color: white;
+  transform: rotate(30deg);
+  border-radius: 15%;
+
+  animation: animate 7s infinite;
+}
+
+@keyframes animate {
+  0% {
+    transform: rotate(30deg);
+    border-radius: 15%;
+  }
+  25% {
+    transform: rotate(120deg);
+    border-radius: 30%;
+  }
+  50% {
+    transform: rotate(210deg);
+    border-radius: 15%;
+  }
+  75% {
+    transform: rotate(300deg);
+    border-radius: 30%;
+  }
+}
+
+.showColor {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  display: none;
+  justify-content: center;
+}
+
+
+.showColor .c1,
+.showColor .c2,
+.showColor .c3,
+.showColor .c4,
+.showColor .c5 {
+  width: 20%;
+  height: 10px;
+}
+
+.showColor .box {
+  display: flex;
+  width: 100%;
+}
+
+.showColor .c1 {
+  background-color: var(--c1);
+}
+
+.showColor .c2 {
+  background-color: var(--c2);
+}
+
+.showColor .c3 {
+  background-color: var(--c3);
+}
+
+.showColor .c4 {
+  background-color: var(--c4);
+}
+
+.showColor .c5 {
+  background-color: var(--c5);
+}
+
+header {
+  position: fixed;
+  width: 100%;
+  height: 80px;
+  padding: 0 6%;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header .logo {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--cHeader);
+}
+
+header ul {
+  display: flex;
+}
+
+header ul li {
+  padding-left: 30px;
+}
+
+header ul li a {
+  color: var(--cHeader);
+  font-weight: 500;
+  transition: .3s;
+}
+
+header ul li a:hover {
+  color: var(--cHeaderHover);
+  transition: .6s;
+}
+
+header .lineBt {
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  left: 0;
+
+  /* border: 1px solid red; */
+
+  display: flex;
+  justify-content: center;
+}
+
+header .line {
+  width: 90%;
+  height: .5px;
+  background-color: var(--cHeader);
+
+  border-radius: 5px;
+  opacity: .8;
+}
+
+.textShow {
+  position: relative;
+  top: 100px;
+  left: 200px;
+  width: 800px;
+  height: 300px;
+  /* border: 1px solid green; */
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#textAnima {
+  display: block;
+  animation: sliceWidth 3s;
+  width: auto;
+}
+
+@keyframes sliceWidth {
+  from {
+    width: 0px;
+    opacity: 0;
+  }
+  to {
+    width: 86.5px;
+    opacity: .8;
+  }
+}
+
