@@ -213,7 +213,7 @@ body a {
 }
 
 header {
-  position: fixed;
+  position: relative;
   width: 100%;
   height: 80px;
   padding: 0 6%;
@@ -235,6 +235,19 @@ header ul {
 
 header ul li {
   padding-left: 30px;
+
+  animation: animi 2s linear;
+  animation-delay: calc(-1s * var(--i));
+}
+
+@keyframes animi {
+  from {
+    transform: translateY(-5px);
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 header ul li a {
@@ -247,6 +260,50 @@ header ul li a:hover {
   color: var(--cHeaderHover);
   transition: .6s;
 }
+
+header .menubar {
+  position:relative;
+  width: 40px;
+  height: 40px;
+  background-color: var(--c4);
+  border-radius: 5px;
+
+  display: none;
+  align-items: center;
+  justify-content: center;
+}
+
+header .menubar .boxLine {
+  position: relative;
+  width: 30px;
+  height: 25px;
+  /* border: 1px solid white; */
+
+  display: Flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+header .menubar .boxLine .line {
+  height: 4px;
+  width: 90%;
+  background-color: white;
+}
+
+header .menubar .boxLine .line1 {
+  position: absolute;
+  top: 0;
+}
+
+header .menubar .boxLine .line3 {
+  position: absolute;
+  bottom: 0;
+}
+
+/* header .menubar .line {
+  position:
+} */
 
 header .lineBt {
   position: absolute;
@@ -269,13 +326,109 @@ header .line {
   opacity: .8;
 }
 
-.textShow {
+.container {
   position: relative;
-  top: 100px;
-  left: 200px;
-  width: 800px;
-  height: 300px;
+  width: 100%;
+  height: 2000px;
+  /* border: 2px solid green; */
+}
+
+.container .contai1 {
+  position: relative;
+  width: 100%;
+  height: 650px;
+
+  padding: 0px 50px;
+
+  /* border: 2px solid orange; */
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.container .contai1 .textTitle {
+  position: relative;
+  width: 500px;
+  height: 500px;
   /* border: 1px solid green; */
+  color: var(--c4);
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-top: 130px;
+}
+
+.container .contai1 .textTitle .bqm {
+  position: absolute;
+  left: 0; top: 0;
+  width: 100%;
+  height: 100%;
+  border: 2px solid var(--c2);
+  box-shadow: 0 0 3px var(--c2);
+  border-radius: 150px;
+
+  transform: rotate(45deg);
+  z-index: -1;
+  opacity: .8;
+}
+
+.container .contai1 .textTitle .bqm::before {
+  content: '';
+  position: absolute;
+  left: 5px;
+  top: 0px;
+  width: 100%;
+  height: 100%;
+  border: 2px solid var(--c5);
+  box-shadow: 0 0 3px var(--c5);
+  border-radius: 150px;
+  animation: bqm 7s linear infinite;
+}
+
+.container .contai1 .textTitle .bqm::after {
+  content: '';
+  position: absolute;
+  left: 0px;
+  top: 3px;
+  width: 100%;
+  height: 100%;
+  border: 2px solid var(--c4);
+  border-radius: 150px;
+  box-shadow: 0 0 3px var(--c4);
+  animation: bqm 6s linear infinite;
+}
+
+@keyframes bqm {
+  0%, 100% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(-7px);
+  }
+}
+
+.container .contai1 .textTitle h1 {
+  position: absolute;
+  top: 170px;
+  margin-bottom: 30px;
+  font-weight: 300;
+  font-size: 40px;
+}
+
+.container .contai1 .textTitle h1 span {
+  font-size: 50px;
+  color: var(--c5);
+  font-weight: 500;
+  text-shadow: 0px 0px 2px var(--c2);
+}
+
+.container .contai1 .textTitle .textShow {
+  position: relative;
+  width: 100%;
+  height: auto;
 
   display: flex;
   align-items: center;
@@ -286,6 +439,10 @@ header .line {
   display: block;
   animation: sliceWidth 3s;
   width: auto;
+}
+
+#textAnima span {
+  font-size: 16px;
 }
 
 @keyframes sliceWidth {
@@ -299,3 +456,20 @@ header .line {
   }
 }
 
+
+
+@media only screen and (max-width: 700px) {
+  header ul {
+    display: none;
+  }
+
+  header .menubar {
+    display: flex;
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  body {
+    background-color: green;
+  }
+}

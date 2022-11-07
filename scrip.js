@@ -71,10 +71,11 @@ function Test (position, color) {
   const divBox = document.createElement('div')
   divBox.id = 'boxAnima'
   divBox.style.position = 'relative'
+  // divBox.style.border = '1px solid red'
   divBox.style.top = 0
   divBox.style.left = 0
   divBox.style.display = 'flex'
-  divBox.style.justifyContent = 'start'
+  divBox.style.justifyContent = 'center'
   divBox.style.alignItems = 'center'
   divBox.style.width = '100%'
   divBox.style.height = '100%'
@@ -95,7 +96,7 @@ function Test (position, color) {
   divElement.style.padding = '15px'
   divElement.style.paddingLeft = '30px'
   divElement.style.display = 'flex'
-  divElement.style.justifyContent = 'start'
+  divElement.style.justifyContent = 'center'
   divElement.style.alignItems = 'center'
   document.getElementById('boxAnima').append(divElement)
 
@@ -134,7 +135,7 @@ function Test (position, color) {
 
   const title = [
     'Hi!, I\'m\tPhumiphat (Ro)🙂.',
-    'สวัสดีครับ!, ผมชื่อ ภูมิพัฒน์ (ชื่อเล่น โร่) ครับผม🙂.'
+    'สวัสดีครับ!, ผมชื่อ ภูมิพัฒน์ (โร่) ครับ🙂.'
   ]
 
   let count = 0
@@ -206,4 +207,4 @@ function runTitle () {
 setTimeout(onLoad, 1500)
 showDetails()
 
-// document.querySelector('.load').style.display = 'none'
+document.querySelector('.load').style.display = 'none'
