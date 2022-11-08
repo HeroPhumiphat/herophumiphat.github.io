@@ -209,7 +209,7 @@ function menubar () {
 }
 
 
-document.querySelector('.load').style.display = 'none'
+// document.querySelector('.load').style.display = 'none'
 
 function controlOpacityContai1 () {
   const contai1 = document.querySelector('.container>.contai1')
