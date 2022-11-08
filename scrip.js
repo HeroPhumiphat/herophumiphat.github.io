@@ -4,22 +4,22 @@ let showDetails = () => {
   divA.style.position = 'fixed'
   divA.style.width = 'auto'
   divA.style.height = 'auto'
-  divA.style.color = '#3e3e3e'
+  divA.style.color = 'var(--c3)'
   divA.style.border = '2px solid #e1e1e1'
   divA.style.borderRadius = '5px'
   divA.style.bottom = 0
   divA.style.left = 0
   divA.style.margin = '20px'
   divA.style.padding = '20px'
-  divA.style.opacity = '.5'
+  divA.style.opacity = '.3'
   divA.style.textAlign = 'start'
   document.body.append(divA)
 
   const details = document.getElementById('details')
-  details.innerText = `window.width: ${window.innerWidth}px.`
+  details.innerText = `Display Size\n=> width: ${window.innerWidth}px.\n=> height: ${window.innerHeight}px`
 
   window.addEventListener('resize', function() {
-    details.innerText = `window.width: ${window.innerWidth}px.`
+    details.innerText = `Display Size\n=> width: ${window.innerWidth}px.\n=> height: ${window.innerHeight}px`
   })
 
 
@@ -28,14 +28,14 @@ let showDetails = () => {
   divB.style.position = 'fixed'
   divB.style.width = 'auto'
   divB.style.height = 'auto'
-  divB.style.color = '#3e3e3e'
+  divB.style.color = 'var(--c3)'
   divB.style.border = '2px solid #e1e1e1'
   divB.style.borderRadius = '5px'
   divB.style.bottom = 0
   divB.style.right = 0
   divB.style.margin = '20px'
   divB.style.padding = '20px'
-  divB.style.opacity = '.5'
+  divB.style.opacity = '.3'
   divB.style.textAlign = 'end'
   document.body.append(divB)
 
@@ -45,8 +45,6 @@ let showDetails = () => {
   window.addEventListener('scroll', function () {
     positionScrollY.innerText = `scrollY: ${window.scrollY.toFixed(1)}px.`
   })
-
-  document.querySelector('.showColor').style.display = 'flex'
 }
 
 function onLoad () {
@@ -55,7 +53,7 @@ function onLoad () {
     load.style.display = 'none'
   }, 1000);
   load.classList.add('TL')
-
+  startOnWeb ()
   setTimeout(() => {
     runTitle()
   }, 2000);
@@ -85,12 +83,7 @@ function Test (position, color) {
   divElement.id = 'textAnima'
   divElement.style.position = 'relative'
   divElement.style.minHeight = '70px'
-  // divElement.st
   divElement.style.border = `1px solid ${color}`
-  // divElement.style.backgroundColor = color
-  divElement.style.opacity = '.8'
-  // divElement.style.minWidth = '200px'
-  // divElement.style.width = '400px'
   divElement.style.boxShadow = `5px 4px 5px ${color}`
   divElement.style.borderRadius = '5px'
   divElement.style.padding = '15px'
@@ -135,7 +128,8 @@ function Test (position, color) {
 
   const title = [
     'Hi!, I\'m\tPhumiphat (Ro)🙂.',
-    'สวัสดีครับ!, ผมชื่อ ภูมิพัฒน์ (โร่) ครับ🙂.'
+    'สวัสดีครับ!, ผมชื่อ ภูมิพัฒน์ (โร่) ครับ🙂.',
+    'I Would Like to Be a Developer.'
   ]
 
   let count = 0
@@ -207,4 +201,44 @@ function runTitle () {
 setTimeout(onLoad, 1500)
 showDetails()
 
-document.querySelector('.load').style.display = 'none'
+let ct = 0
+function menubar () {
+  const menubar = document.querySelector('header>div.menubar')
+  console.log(ct % 2)
+
+  ct % 2 == 0 ? menubar.classList.add('close') : menubar.classList.remove('close')
+  ct % 2 == 1 ? menubar.classList.add('open') : menubar.classList.remove('open')
+  ct++
+
+  console.log('test?')
+}
+
+
+// document.querySelector('.load').style.display = 'none'
+
+function controlOpacityContai1 () {
+  const contai1 = document.querySelector('.container>.contai1')
+  let scroll
+
+  window.addEventListener('scroll', function () {
+    let act = 500
+    if(this.window.scrollY <= act) {
+      scroll = window.scrollY / act
+      console.log(scroll)
+      console.log('scrollY: ', window.scrollY, 'px.')
+
+      contai1.style.opacity = 1-scroll
+      contai1.style.display = 'flex'
+    } else {
+      contai1.style.opacity = '0'
+    }
+  })
+}
+
+controlOpacityContai1()
+
+function startOnWeb () {
+  const h1TextTitle = document.querySelector('.container>.contai1>.textTitle>h1')
+
+  h1TextTitle.classList.add('on')
+}
