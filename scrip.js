@@ -204,17 +204,12 @@ showDetails()
 let ct = 0
 function menubar () {
   const menubar = document.querySelector('header>div.menubar')
-  console.log(ct % 2)
 
-  ct % 2 == 0 ? menubar.classList.add('close') : menubar.classList.remove('close')
-  ct % 2 == 1 ? menubar.classList.add('open') : menubar.classList.remove('open')
-  ct++
-
-  console.log('test?')
+  menubar.classList.toggle('active')
 }
 
 
-// document.querySelector('.load').style.display = 'none'
+document.querySelector('.load').style.display = 'none'
 
 function controlOpacityContai1 () {
   const contai1 = document.querySelector('.container>.contai1')

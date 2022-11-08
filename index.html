@@ -8,6 +8,7 @@
   <title>PM-HERO</title>
 
   <link rel="stylesheet" href="./style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
   <div class="load">
@@ -30,18 +31,29 @@
         PM-HERO
       </a>
     </div>
-
     <ul>
       <li><a href="#profiles">Profiles</a></li>
       <li><a href="#portfolio">Portfolio</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
+    <div class="menubar active" onclick="menubar()">
+      <div class="line"></div>
+      <div class="line"></div>
+      <div class="line"></div>
 
-    <div class="menubar" onclick="menubar()">
-      <div class="boxLine">
-        <div class="line line1"></div>
-        <div class="line line2"></div>
-        <div class="line line3"></div>
+      <div class="listMenu">
+        <button>
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+        <div class="box">
+          <h3>PM-HERO</h3>
+          <div class="list">
+            <a href="/">Home</a>
+            <a href="#profiles">Profiles</a>
+            <a href="#portfolio">Portfolio</a>
+            <a href="#contact">Contact</a>
+          </div>
+        </div>
       </div>
     </div>
   </header>
@@ -68,6 +80,7 @@
       </div>
     </div>
   </div>
+
 
   <script src="./scrip.js"></script>
 </body>
