@@ -592,9 +592,3 @@ header .menubar .listMenu .box .list a:hover {
     display: none;
   }
 }
-
-@media only screen and (max-width: 400px) {
-  body {
-    background-color: green;
-  }
-}
