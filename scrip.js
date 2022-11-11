@@ -7,9 +7,8 @@ let showDetails = () => {
   divA.style.color = 'var(--c3)'
   divA.style.border = '2px solid #e1e1e1'
   divA.style.borderRadius = '5px'
-  divA.style.bottom = 0
-  divA.style.left = 0
-  divA.style.margin = '20px'
+  divA.style.bottom = '8px'
+  divA.style.left = '8px'
   divA.style.padding = '20px'
   divA.style.opacity = '.3'
   divA.style.textAlign = 'start'
@@ -31,9 +30,8 @@ let showDetails = () => {
   divB.style.color = 'var(--c3)'
   divB.style.border = '2px solid #e1e1e1'
   divB.style.borderRadius = '5px'
-  divB.style.bottom = 0
-  divB.style.right = 0
-  divB.style.margin = '20px'
+  divB.style.bottom = '8px'
+  divB.style.right = '8px'
   divB.style.padding = '20px'
   divB.style.opacity = '.3'
   divB.style.textAlign = 'end'
@@ -53,11 +51,6 @@ function onLoad () {
     load.style.display = 'none'
   }, 1000);
   load.classList.add('TL')
-  startOnWeb ()
-  setTimeout(() => {
-    runTitle()
-  }, 2000);
-
 }
 
 function Test (position, color) {
@@ -69,9 +62,9 @@ function Test (position, color) {
   const divBox = document.createElement('div')
   divBox.id = 'boxAnima'
   divBox.style.position = 'relative'
-  // divBox.style.border = '1px solid red'
   divBox.style.top = 0
   divBox.style.left = 0
+  // divBox.style.border = '1px solid red'
   divBox.style.display = 'flex'
   divBox.style.justifyContent = 'center'
   divBox.style.alignItems = 'center'
@@ -83,9 +76,11 @@ function Test (position, color) {
   divElement.id = 'textAnima'
   divElement.style.position = 'relative'
   divElement.style.minHeight = '70px'
-  divElement.style.border = `1px solid ${color}`
-  divElement.style.boxShadow = `5px 4px 5px ${color}`
-  divElement.style.borderRadius = '5px'
+  divElement.style.width = '800px'
+  divElement.style.color = 'var(--c1)'
+  // divElement.style.border = `2px solid ${color}`
+  // divElement.style.boxShadow = `5px 4px 5px ${color}`
+  divElement.style.borderRadius = '15px'
   divElement.style.padding = '15px'
   divElement.style.paddingLeft = '30px'
   divElement.style.display = 'flex'
@@ -93,42 +88,27 @@ function Test (position, color) {
   divElement.style.alignItems = 'center'
   document.getElementById('boxAnima').append(divElement)
 
-  // const textAnima = document.getElementById('textAnima')
-  // let size = 10
-  // const setSizeWidth = setInterval(() => {
-  //   console.log('a')
-  //   size += 10
-  //   console.log(size)
-  //   let boxWidth  = `${size}px`
-  //   textAnima.style.width = boxWidth
-  //   if (size > 500) {
-  //     clearInterval(setSizeWidth)
-  //   }
-  // }, 70)
-
-  // const form = document.createElement('span')
-  // form.id = 'formAnima'
-  // form.style.letterSpacing = '3px'
-  // form.style.paddingRight = '10px'
-  // form.style.color = color
-  // form.style.fontWeight = '600'
-  // // form.innerText = 'Me : '
-  // document.getElementById('textAnima').append(form)
+  const ms = document.createElement('span')
+  ms.id = 'ms'
+  ms.innerText = 'PM: "'
+  ms.style.marginRight = '15px'
+  ms.style.fontWeight = '600'
+  ms.style.fontSize = '30px'
+  ms.style.color = 'var(--c3)'
+  document.getElementById('textAnima').append(ms)
 
   const span = document.createElement('span')
   span.id = 'char'
   span.style.padding = '0 3px'
   span.style.letterSpacing = '2px'
-  span.style.color = color
-  // span.style.border = '1px solid red'
+  span.style.color = 'var(--c3)'
   document.getElementById('textAnima').append(span)
 
   const char = document.getElementById('char')
   const chars = []
 
   const title = [
-    'Hi!, I\'m\tPhumiphat (Ro)🙂.',
-    'สวัสดีครับ!, ผมชื่อ ภูมิพัฒน์ (โร่) ครับ🙂.',
+    'Hi!, I\'m\tPhumiphat Ro🙂.',
     'I Would Like to Be a Developer.'
   ]
 
@@ -137,7 +117,7 @@ function Test (position, color) {
 
   text = title[count]
 
-  const time = random(.8, 2) * 100
+  const time = random(1.2, 1.8) * 100
   let key = 0
   let status = 'push'
 
@@ -165,9 +145,7 @@ function Test (position, color) {
           setTimeout(() => {
             key = 0
             status = 'push'
-            // console.log(status)
             count++
-            // cosnsole.log('count: ', count % title.length)
             text = title[count % title.length]
           }, 2 * 1000)
         }
@@ -177,26 +155,35 @@ function Test (position, color) {
 
 
   const set = () => setInterval(creText, time)
-  setTimeout(set, 3500)
+  setTimeout(set, 5000)
 
   const space = document.createElement('span')
   space.id = 'space'
   space.style.padding = '0 3px'
   space.style.paddingRight = '30px'
   space.style.color = color
-  // space.style.border = '1px solid blue'
   space.style.width = '15px'
   setInterval(()=> {
     space.innerText === '' ? space.innerText = '_' : space.innerText = ''
   }, .8 * 1000)
   document.getElementById('textAnima').append(space)
+
+  const msl = document.createElement('span')
+  msl.id = 'msl'
+  msl.innerText = '"'
+  msl.style.marginLeft = '10px'
+  msl.style.fontWeight = '600'
+  msl.style.fontSize = '30px'
+  msl.style.color = 'var(--c3)'
+  document.getElementById('textAnima').append(msl)
 }
 
 function runTitle () {
   const body = document.querySelector('.textShow')
-  const color = '#197EDE'
+  const color = 'var(--c3)'
   return Test(body, color)
 }
+runTitle()
 
 setTimeout(onLoad, 1500)
 showDetails()
@@ -208,32 +195,27 @@ function menubar () {
   menubar.classList.toggle('active')
 }
 
+function onCopy() {
+  let copyText = document.getElementById("myInput");
 
-// document.querySelector('.load').style.display = 'none'
+  copyText.select();
+  copyText.setSelectionRange(0, 99999);
+  navigator.clipboard.writeText(copyText.value);
 
-function controlOpacityContai1 () {
-  const contai1 = document.querySelector('.container>.contai1')
-  let scroll
+  alert("Copied the text: " + copyText.value);
+}
 
+function other () {
+  const header = document.querySelector('header')
   window.addEventListener('scroll', function () {
-    let act = 500
-    if(this.window.scrollY <= act) {
-      scroll = window.scrollY / act
-      console.log(scroll)
-      console.log('scrollY: ', window.scrollY, 'px.')
-
-      contai1.style.opacity = 1-scroll
-      contai1.style.display = 'flex'
+    if (this.window.scrollY > 800) {
+      header.classList.add('active')
     } else {
-      contai1.style.opacity = '0'
+      header.classList.remove('active')
     }
   })
 }
+other()
 
-controlOpacityContai1()
 
-function startOnWeb () {
-  const h1TextTitle = document.querySelector('.container>.contai1>.textTitle>h1')
-
-  h1TextTitle.classList.add('on')
-}
+// document.querySelector('.load').style.display = 'none'

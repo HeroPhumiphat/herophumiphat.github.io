@@ -32,8 +32,9 @@
       </a>
     </div>
     <ul>
-      <li><a href="#profiles">Profiles</a></li>
-      <li><a href="#portfolio">Portfolio</a></li>
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#skills">Skills</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
     <div class="menubar" onclick="menubar()">
@@ -49,8 +50,8 @@
           <h3>PM-HERO</h3>
           <div class="list">
             <a href="/">Home</a>
-            <a href="#profiles">Profiles</a>
-            <a href="#portfolio">Portfolio</a>
+            <a href="#about">About</a>
+            <a href="#skills">Skills</a>
             <a href="#contact">Contact</a>
           </div>
         </div>
@@ -61,22 +62,154 @@
 
   <div class="container">
     <div class="contai1">
-      <div class="textTitle">
-        <div class="bqm"></div>
-        <h1><span>Welcome</span> to My Profile.</h1>
+      <div class="content">
+        <div class="title">
+          <h3>Welcome to <span> My Profile</span></h3>
+        </div>
         <div class="textShow"></div>
       </div>
-      <div class="bxt bxt-1" style="--j:1;">
-        <div class="bqm"></div>
+      <div class="b1">
+        <i class="fa-brands fa-codepen"></i>
       </div>
-      <div class="bxt bxt-2" style="--j:3;">
-        <div class="bqm"></div>
+      <div class="b2">
+        <i class="fa-brands fa-docker"></i>
       </div>
-      <div class="bxt bxt-3" style="--j:5;">
-        <div class="bqm"></div>
+    </div>
+
+    <div class="contai2">
+      <div class="about">
+        <div class="image">
+          <div class="box">
+            <i class="fa-solid fa-user"></i>
+            <i class="fa-solid fa-expand"></i>
+          </div>
+        </div>
+        <div class="content">
+          <div class="box">
+            <div class="c">
+              <div class="c1">
+                <h3>MY INTRO</h3>
+                <h1>About Me</h1>
+              </div>
+              <div class="iconGit">
+                <i class="fa-brands fa-github"></i>
+
+                <div class="tootip">
+                  <p>GitHub</p>
+                  <div class="bc"></div>
+                </div>
+              </div>
+            </div>
+            <p class="a">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quasi rem tenetur repellendus maxime nisi sunt unde modi quod earum. Necessitatibus</p>
+            <div class="boxC">
+              <p>Name: </p>
+              <p>Phumiphat Meemano</p>
+            </div>
+            <div class="boxC">
+              <p>Date of Birth: </p>
+              <p>July 31, 1998</p>
+            </div>
+            <div class="boxC">
+              <p>Date: </p>
+              <p>hero.phumiphat@gmail.com</p>
+            </div>
+            <div class="boxC">
+              <p>Phone: </p>
+              <p>(+66) 97 181 0648</p>
+            </div>
+          </div>
+        </div>
       </div>
-      <div class="bxt bxt-4" style="--j:7;">
-        <div class="bqm"></div>
+
+      <div class="skills">
+        <div class="title">
+          <h3>SKILLS</h3>
+          <h1>My Skills</h1>
+        </div>
+        <br>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic maxime molestiae quod quam nihil soluta aperiam sit praesentium et sunt!
+        <br>
+        <div class="g">
+          <div class="go">
+            <h3>Font End</h3>
+            <div class="gc">
+              <div class="box">
+                <i class="fa-brands fa-html5"></i>
+                <p>HTML</p>
+              </div>
+              <div class="box">
+                <i class="fa-brands fa-css3-alt"></i>
+                <p>CSS</p>
+              </div>
+              <div class="box">
+                <i class="fa-brands fa-js"></i>
+                <p>Javascript</p>
+              </div>
+            </div>
+          </div>
+          <div class="go">
+            <h3>FrameWork JS</h3>
+            <div class="gc">
+              <div class="box">
+                <i class="fa-brands fa-react"></i>
+                <p>React (Basic)</p>
+              </div>
+              <div class="box">
+                <i class="fa-brands fa-vuejs"></i>
+                <p>Vue (Basic)</p>
+              </div>
+            </div>
+          </div>
+          <div class="go">
+            <h3>Back End</h3>
+            <div class="gc">
+              <div class="box">
+                <i class="fa-brands fa-node"></i>
+                <p>Node (Basic)</p>
+              </div>
+              <div class="box">
+                <i class="fa-solid fa-database"></i>
+                <p>MongoDB (Basic)</p>
+              </div>
+            </div>
+          </div>
+          <div class="go">
+            <h3>Other</h3>
+            <div class="gc">
+              <div class="box">
+                <i class="fa-solid fa-c"></i>
+                <p>C++ (Basic)</p>
+              </div>
+              <div class="box">
+                <i class="fa-solid fa-wand-magic-sparkles"></i>
+                <p>Photoshop</p>
+              </div>
+              <div class="box">
+                <i class="fa-solid fa-paintbrush"></i>
+                <p>Illustrator</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="contact">
+        <div class="title">
+          <h3>CONTACT US</h3>
+          <h1>Contact Me</h1>
+        </div>
+        <br>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab aliquam quod velit totam quis quisquam?</p>
+        <br>
+        <div class="box">
+          <div class="g">
+            <div class="icon" onclick="onCopy()">
+              <i class="fa-solid fa-copy"></i>
+            </div>
+            <span>Email: </span>
+            <input type="text" value="Hero.phumiphat@gmail.com" id="myInput" disabled>
+          </div>
+        </div>
       </div>
     </div>
   </div>
