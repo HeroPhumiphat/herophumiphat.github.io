@@ -93,7 +93,7 @@ function Test (position, color) {
   ms.innerText = 'PM: "'
   ms.style.marginRight = '15px'
   ms.style.fontWeight = '600'
-  ms.style.fontSize = '30px'
+  // ms.style.fontSize = '30px'
   ms.style.color = 'var(--c3)'
   document.getElementById('textAnima').append(ms)
 
@@ -173,7 +173,6 @@ function Test (position, color) {
   msl.innerText = '"'
   msl.style.marginLeft = '10px'
   msl.style.fontWeight = '600'
-  msl.style.fontSize = '30px'
   msl.style.color = 'var(--c3)'
   document.getElementById('textAnima').append(msl)
 }
@@ -221,5 +220,25 @@ function goto (scroll) {
   window.scrollTo(0, scroll)
 }
 
+
+function resp () {
+  const c1title = document.querySelector('.contai1>.content>.title')
+  const c1titleSP = document.querySelector('.contai1>.content>.title>h3>span')
+
+  const textAnima = document.getElementById('textAnima')
+
+  window.addEventListener('resize', function () {
+    if (this.window.innerWidth < 900) {
+      let size = 50 - ((900 - this.window.innerWidth) / 20)
+      c1title.style.fontSize = `${size}px`
+      c1titleSP.style.fontSize = `${size}px`
+      textAnima.style.fontSize = `${size - 18}px`
+      console.log(size)
+    }
+  })
+
+
+}
+resp()
 
 // document.querySelector('.load').style.display = 'none'
