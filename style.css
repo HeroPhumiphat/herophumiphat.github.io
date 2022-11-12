@@ -207,13 +207,21 @@ header ul li {
   padding-left: 30px;
 }
 
-header ul li a {
+header ul li button {
   color: var(--cHeader);
   font-weight: 500;
   transition: .3s;
+
+  background-color: transparent;
+  border: none;
+  font-size: 16px;
+  font-weight: 600;
+  font-family: var(--fMali);
+
+  cursor: pointer;
 }
 
-header ul li a:hover {
+header ul li button:hover {
   color: var(--cHeaderHover);
   transition: .6s;
 }
@@ -293,7 +301,7 @@ header .menubar.active .listMenu {
   }
 }
 
-header .menubar .listMenu button {
+header .menubar .listMenu button.btnclose {
   position: absolute;
   right: 8%;
   top: 25px;
@@ -311,12 +319,12 @@ header .menubar .listMenu button {
   justify-content: center;
 }
 
-header .menubar .listMenu button i {
+header .menubar .listMenu button.btnclose i {
   font-size: 25px;
   color: var(--c1);
 }
 
-header .menubar .listMenu button:hover {
+header .menubar .listMenu button.btnclose:hover {
   opacity: 1;
 }
 
@@ -351,14 +359,19 @@ header .menubar .listMenu .box .list {
 }
 
 
-header .menubar .listMenu .box .list a {
+header .menubar .listMenu .box .list button.btn {
   color: var(--c5);
   font-weight: 600;
   font-size: 25px;
   padding: 10px 0;
+
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  font-family: var(--fMali);
 }
 
-header .menubar .listMenu .box .list a:hover {
+header .menubar .listMenu .box .list button.btn:hover {
   letter-spacing: .8px;
   font-weight: 700;
 }
@@ -692,7 +705,7 @@ header .menubar .listMenu .box .list a:hover {
   width: 100%;
   height: 300px;
   margin-top: 300px;
-  margin-bottom: 150px;
+  margin-bottom: 200px;
 
   /* border: 1px solid red; */
 
@@ -708,10 +721,30 @@ header .menubar .listMenu .box .list a:hover {
 .container .contai2 .contact .box {
   position: relative;
   width: 100%;
-  height: 200px;
+  height: 300px;
+  /* border: 1px solid blue; */
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
+}
+
+.container .contai2 .contact .box .g2 {
+  text-align: center;
+}
+
+.container .contai2 .contact .box .g2 h3 {
+  font-size: 14px;
+  margin: 30px 0;
+}
+
+.container .contai2 .contact .box .g2 p {
+  font-size: 18px;
+}
+
+.container .contai2 .contact .box .g2 p>span {
+  font-size: 20px;
+  font-weight: 500;
 }
 
 .container .contai2 .contact .box .g {
@@ -756,19 +789,50 @@ header .menubar .listMenu .box .list a:hover {
   cursor: pointer;
 }
 
+.container .contai2 .contact .box .g .icon .tootip {
+  position: absolute;
+  top: -80px;
+  left: -30px;
+  width: 100px;
+  height: 50px;
+  /* border: 1px solid red; */
+  background-color: var(--c3);
+  border-radius: 10px;
+  color: var(--c1);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  display: none;
+}
+
+.container .contai2 .contact .box .g .icon .tootip .text {
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.container .contai2 .contact .box .g .icon .tootip .box {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  /* border: 1px solid blue; */
+  background-color: var(--c3);
+  transform: rotate(45deg);
+  bottom: -5px;
+}
+
 .container .contai2 .contact .box .g .icon:hover {
   text-shadow: 0 0 5px var(--c2);
+}
+
+.container .contai2 .contact .box .g .icon:hover .tootip {
+  text-shadow: 0 0 0;
 }
 
 .container .contai2 .contact .box .g .icon i {
   font-size: 25px;
 }
-
-/* #textAnima {
-  display: block;
-  animation: sliceWidth 1.5s;
-  width: auto;
-} */
 
 #details,
 #positionScrollY {
@@ -789,7 +853,7 @@ header .menubar .listMenu .box .list a:hover {
 
 
 
-@media only screen and (max-width: 800px) {
+@media only screen and (max-width: 900px) {
   header a {
     color: var(--c3);
   }
@@ -802,9 +866,31 @@ header .menubar .listMenu .box .list a:hover {
     display: flex;
   }
 
-  /* .container {
-    opacity: 0;
-  } */
+  .container .contai1 {
+    width: 100vw;
+    height: 100vh;
+    border: 3px solid blue;
+  }
+
+  .container .contai1 .content {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid red;
+    align-items: start;
+  }
+
+  .container .contai1 .content .title h3 {
+    font-size: 40px;
+    border: 1px solid red;
+  }
+
+  .container .contai1 .content .title h3>span {
+    font-size: 1em;
+  }
+
+  .container .contai2 {
+    display: none;
+  }
 
   #details,
   #positionScrollY {

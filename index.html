@@ -32,10 +32,10 @@
       </a>
     </div>
     <ul>
-      <li><a href="#home">Home</a></li>
-      <li><a href="#about">About</a></li>
-      <li><a href="#skills">Skills</a></li>
-      <li><a href="#contact">Contact</a></li>
+      <li><button onclick="goto(0)">Home</button></li>
+      <li><button onclick="goto(800)">About</button></li>
+      <li><button onclick="goto(1525)">Skills</button></li>
+      <li><button onclick="goto(2800)">Contact</button></li>
     </ul>
     <div class="menubar" onclick="menubar()">
       <div class="line"></div>
@@ -43,16 +43,16 @@
       <div class="line"></div>
 
       <div class="listMenu">
-        <button>
+        <button class="btnclose">
           <i class="fa-solid fa-xmark"></i>
         </button>
         <div class="box">
           <h3>PM-HERO</h3>
           <div class="list">
-            <a href="/">Home</a>
-            <a href="#about">About</a>
-            <a href="#skills">Skills</a>
-            <a href="#contact">Contact</a>
+            <button class="btn" onclick="goto(0)">Home</button>
+            <button class="btn" onclick="goto(800)">About</button>
+            <button class="btn" onclick="goto(1525)">Skills</button>
+            <button class="btn" onclick="goto(2800)">Contact</button>
           </div>
         </div>
       </div>
@@ -92,7 +92,9 @@
                 <h1>About Me</h1>
               </div>
               <div class="iconGit">
-                <i class="fa-brands fa-github"></i>
+                <a href="https://github.com/HeroPhumiphat">
+                  <i class="fa-brands fa-github"></i>
+                </a>
 
                 <div class="tootip">
                   <p>GitHub</p>
@@ -203,11 +205,19 @@
         <br>
         <div class="box">
           <div class="g">
-            <div class="icon" onclick="onCopy()">
+            <div class="icon" onclick="onCopy()" onmouseover="document.getElementById('ctp').style.display = 'flex'" onmouseout="document.getElementById('ctp').style.display = 'none'">
               <i class="fa-solid fa-copy"></i>
+              <div class="tootip" id="ctp">
+                <div class="text">copy</div>
+                <div class="box"></div>
+              </div>
             </div>
             <span>Email: </span>
             <input type="text" value="Hero.phumiphat@gmail.com" id="myInput" disabled>
+          </div>
+          <div class="g2">
+            <h3>OR</h3>
+            <p><span>Telephone: </span>(+66) 97 181 0648</p>
           </div>
         </div>
       </div>

@@ -217,5 +217,9 @@ function other () {
 }
 other()
 
+function goto (scroll) {
+  window.scrollTo(0, scroll)
+}
+
 
 // document.querySelector('.load').style.display = 'none'
