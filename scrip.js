@@ -76,11 +76,11 @@ function Test (position, color) {
   divElement.id = 'textAnima'
   divElement.style.position = 'relative'
   divElement.style.minHeight = '70px'
-  divElement.style.width = '800px'
+  // divElement.style.width = '800px'
   divElement.style.color = 'var(--c1)'
   // divElement.style.border = `2px solid ${color}`
   // divElement.style.boxShadow = `5px 4px 5px ${color}`
-  divElement.style.borderRadius = '15px'
+  // divElement.style.borderRadius = '15px'
   divElement.style.padding = '15px'
   divElement.style.paddingLeft = '30px'
   divElement.style.display = 'flex'
@@ -171,7 +171,7 @@ function Test (position, color) {
   const msl = document.createElement('span')
   msl.id = 'msl'
   msl.innerText = '"'
-  msl.style.marginLeft = '10px'
+  msl.style.marginLeft = '0px'
   msl.style.fontWeight = '600'
   msl.style.color = 'var(--c3)'
   document.getElementById('textAnima').append(msl)
@@ -216,29 +216,38 @@ function other () {
 }
 other()
 
-function goto (scroll) {
-  window.scrollTo(0, scroll)
-}
-
-
-function resp () {
-  const c1title = document.querySelector('.contai1>.content>.title')
-  const c1titleSP = document.querySelector('.contai1>.content>.title>h3>span')
-
-  const textAnima = document.getElementById('textAnima')
-
-  window.addEventListener('resize', function () {
-    if (this.window.innerWidth < 900) {
-      let size = 50 - ((900 - this.window.innerWidth) / 20)
-      c1title.style.fontSize = `${size}px`
-      c1titleSP.style.fontSize = `${size}px`
-      textAnima.style.fontSize = `${size - 18}px`
-      console.log(size)
+function goto (page) {
+    if (page === 'about' ) {
+      if (window.innerWidth >= 900 && this.window.innerWidth <= 2000) {
+        window.scrollTo(0, 700)
+      } else if (window.innerWidth >= 500 && window.innerWidth < 900) {
+        window.scrollTo(0, 700)
+      } else if (window.innerWidth < 500) {
+        window.scrollTo(0, 750)
+      } else if (window.innerWidth > 2000) {
+        window.scrollTo(0, 1400)
+      }
+    } else if (page === 'skills' ) {
+      if (window.innerWidth >= 900 && this.window.innerWidth <= 2000) {
+        window.scrollTo(0, 1450)
+      } else if (window.innerWidth >= 500 && window.innerWidth < 900) {
+        window.scrollTo(0, 1350)
+      } else if (window.innerWidth < 500) {
+        window.scrollTo(0, 1500)
+      } else if (window.innerWidth > 2000) {
+        window.scrollTo(0, 2600)
+      }
+    } else if (page === 'contact' ) {
+      if (window.innerWidth >= 900 && this.window.innerWidth <= 2000) {
+        window.scrollTo(0, 2250)
+      } else if (window.innerWidth >= 500 && window.innerWidth < 900) {
+        window.scrollTo(0, 2050)
+      } else if (window.innerWidth < 500) {
+        window.scrollTo(0, 2450)
+      } else if (window.innerWidth > 2000) {
+        window.scrollTo(0, 3850)
+      }
     }
-  })
-
-
 }
-resp()
 
 // document.querySelector('.load').style.display = 'none'
