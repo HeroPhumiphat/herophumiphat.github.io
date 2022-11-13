@@ -218,7 +218,9 @@ other()
 
 function goto (page) {
     if (page === 'about' ) {
-      if ((window.innerWidth >= 900 && this.window.innerWidth <= 2000) && (window.innerHeight > 800 && window.innerHeight <= 1000)) {
+      if ((window.innerWidth >= 900 && this.window.innerWidth <= 2000) && (window.innerHeight <= 800)) {
+      window.scrollTo(0, 700)
+      } else if ((window.innerWidth >= 900 && this.window.innerWidth <= 2000) && (window.innerHeight > 800 && window.innerHeight <= 1000)) {
         window.scrollTo(0, 700)
       } else if ((window.innerWidth >= 900 && this.window.innerWidth <= 2000) && (window.innerHeight > 1000)) {
         window.scrollTo(0, 1000)
@@ -232,7 +234,9 @@ function goto (page) {
         window.scrollTo(0, 1400)
       }
     } else if (page === 'skills' ) {
-      if ((window.innerWidth >= 900 && this.window.innerWidth <= 2000) && (window.innerHeight > 800 && window.innerHeight <= 1000)) {
+      if ((window.innerWidth >= 900 && this.window.innerWidth <= 2000) && (window.innerHeight <= 800)) {
+        window.scrollTo(0, 1450)
+      } else if ((window.innerWidth >= 900 && this.window.innerWidth <= 2000) && (window.innerHeight > 800 && window.innerHeight <= 1000)) {
         window.scrollTo(0, 1450)
       } else if ((window.innerWidth >= 900 && this.window.innerWidth <= 2000) && (window.innerHeight > 1000)) {
         window.scrollTo(0, 1550)
@@ -246,7 +250,9 @@ function goto (page) {
         window.scrollTo(0, 2600)
       }
     } else if (page === 'contact' ) {
-      if (window.innerWidth >= 900 && this.window.innerWidth <= 2000) {
+      if ((window.innerWidth >= 900 && this.window.innerWidth <= 2000) && (window.innerHeight <= 800)) {
+        window.scrollTo(0, 2200)
+      } else if (window.innerWidth >= 900 && this.window.innerWidth <= 2000) {
         window.scrollTo(0, 2250)
       } else if (window.innerWidth >= 500 && window.innerWidth < 900) {
         window.scrollTo(0, 2050)
